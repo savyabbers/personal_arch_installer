@@ -70,6 +70,8 @@ if [ ! -e "${Disk}3" ] ; then
     exit 1
 fi
 
+#label root partition
+e2label "${Disk}2" arch_os
 
 #format the partition
 mkfs.fat -F32 "${Disk}1" 
