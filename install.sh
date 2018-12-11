@@ -93,7 +93,7 @@ mv mirrorlist /etc/pacman.d/mirrorlist
 base="base base-devel xorg-server ufw"
 kde="plasma kdebase yakuake spectacle kdeconnect okular kate sddm"
 extras="firefox ark libreoffice-fresh sshfs deluge filezilla vlc"
-moredev="ghc rust lua erlang clisp nasm git"
+moredev="ghc rustup lua erlang clisp nasm git"
 
 pacstrap /mnt $base $kde $extras $moredev
 
@@ -108,6 +108,8 @@ printf "en_US.UTF8 UTF8\n" >> /etc/locale.gen
 local-gen
 printf "LANG=en_US.UTF8\n" >> /etc/locale.conf
 printf "hostname" > /etc/hostname
+rustup toolchain install stable
+rustup defult stable
 passwd
 bootctl --path=/boot/ install
 exit
