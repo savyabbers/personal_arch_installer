@@ -1,13 +1,6 @@
 # Personal Install script.
 
-<<<<<<< HEAD
 
-=======
--------------------------------------------------
-## Untested Script
-Use at your own risk.
--------------------------------------------------
->>>>>>> 243240fab013216e846d563265b9638c785814e6
 ## Usage of script
     ./install -d /dev/xxx
 
