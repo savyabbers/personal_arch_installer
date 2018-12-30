@@ -4,7 +4,7 @@
 #check to see if we are in uefi mode
 #for now we will asume this is supposed to be uefi install
 if [ ! -e "/sys/firmware/efi/efivars" ] ; then
-    echo "Not in UEFI"
+    echo "Not in UEFI" >&2
     exit 1
 fi
 
@@ -19,7 +19,7 @@ fi
 #install needs to be connected to internet
 wget -q --spider https://archlinux.org/
 if [ $? -ne 0 ] ; then
-    echo "Not connected to internet"
+    echo "Not connected to internet" >&2
     exit 1
 fi
 
@@ -45,17 +45,17 @@ cfdisk -z $DISK
 
 # partition check
 if [ ! -e "${DISK}1" ] ; then
-    echo "No boot partition"
+    echo "No boot partition" >&2
     exit 1
 fi
 
 if [ ! -e "${DISK}2" ] ; then
-    echo "No root partition"
+    echo "No root partition" >&2
     exit 1
 fi
 
 if [ ! -e "${DISK}3" ] ; then
-    echo "No swap Partition"
+    echo "No swap Partition" >&2
     exit 1
 fi
 
