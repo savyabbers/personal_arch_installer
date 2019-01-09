@@ -117,7 +117,7 @@ else    #if not in efi
     arch-chroot /mnt << EOF
 ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime
 hwclock --systohc
-printf "en_US.UTF8 UTF8\n" >> /etc/locale.gen
+printf "en_US.UTF8 UTF8\nen_US ISO-8859-1" >> /etc/locale.gen
 local-gen
 printf "LANG=en_US.UTF8\n" >> /etc/locale.conf
 printf "hostname" > /etc/hostname
