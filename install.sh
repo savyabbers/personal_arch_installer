@@ -79,7 +79,7 @@ rm /etc/pacman.d/mirrorlist
 mv mirrorlist /etc/pacman.d/mirrorlist
 
 # packages to be installed
-base="base base-devel xorg-server ufw"
+base="base base-devel xorg-server ufw linux linux-firmware"
 kde="plasma kdebase yakuake spectacle kdeconnect okular kate sddm"
 extras="firefox ark libreoffice-fresh sshfs deluge filezilla vlc"
 moredev="ghc rustup lua erlang clisp nasm git"
