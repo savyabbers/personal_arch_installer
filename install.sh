@@ -80,9 +80,9 @@ mv mirrorlist /etc/pacman.d/mirrorlist
 
 # packages to be installed
 base="base base-devel xorg-server ufw linux linux-firmware"
-kde="plasma kdebase yakuake spectacle kdeconnect okular kate sddm"
-extras="firefox ark libreoffice-fresh sshfs deluge filezilla vlc"
-moredev="ghc rustup lua erlang clisp nasm git"
+kde="plasma kdebase yakuake spectacle kdeconnect okular kate sddm kcalc"
+extras="firefox ark libreoffice-fresh sshfs deluge filezilla vlc nano vim emacs"
+moredev="ghc rustup lua erlang clisp nasm git jdk8-openjdk"
 
 pacstrap /mnt $base $kde $extras $moredev
 
