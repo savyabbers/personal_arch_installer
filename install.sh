@@ -59,6 +59,9 @@ if [ ! -e "${DISK}3" ] ; then
     exit 1
 fi
 
+#reset systemclock
+timedatectl set-ntp true
+
 #label root partition
 e2label "${DISK}2" arch_os
 
@@ -95,10 +98,10 @@ if [ $efi ] ; then  #if in efi
     arch-chroot /mnt << EOF
 ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime
 hwclock --systohc
-printf "en_US.UTF8 UTF8\n" >> /etc/locale.gen
+printf "en_US.UTF8 UTF8\nen_US ISO-8859-1" >> /etc/locale.gen
 local-gen
 printf "LANG=en_US.UTF8\n" >> /etc/locale.conf
-printf "hostname" > /etc/hostname
+printf "archcomputer" > /etc/hostname
 rustup toolchain install stable
 rustup defult stable
 passwd
@@ -120,11 +123,12 @@ hwclock --systohc
 printf "en_US.UTF8 UTF8\nen_US ISO-8859-1" >> /etc/locale.gen
 local-gen
 printf "LANG=en_US.UTF8\n" >> /etc/locale.conf
-printf "hostname" > /etc/hostname
+printf "archcomputer" > /etc/hostname
 rustup toolchain install stable
 rustup defult stable
 pacman -S grub
 grub-install -target=i368-pc $DISK
+grub-mkconfig -o /boot/grub/grub.cfg
 passwd
 EOF
 
