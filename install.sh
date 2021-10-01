@@ -85,7 +85,7 @@ mv mirrorlist /etc/pacman.d/mirrorlist
 base="base base-devel xorg-server ufw linux linux-firmware dhcpcd networkmanager openssh wget zip unzip man texinfo"
 kde="plasma kdebase yakuake spectacle kdeconnect okular kate sddm kcalc"
 extras="firefox ark libreoffice-fresh sshfs deluge filezilla vlc nano vim emacs"
-moredev="ghc rustup lua erlang chicken nasm git jdk11-openjdk"
+moredev="ltrace strace iotrace ghc rustup lua erlang chicken nasm git jdk11-openjdk"
 
 pacstrap /mnt $base $kde $extras $moredev
 
